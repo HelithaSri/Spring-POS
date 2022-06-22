@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="assets/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"/>
+    <title>SPA POS System - Home</title>
+</head>
+<!-- style="
+      background-image: url(assets/img/1.svg);
+      background-repeat: no-repeat;
+      background-size: 30%;
+      background-position-x: left;
+      background-position-y: 145%;
+    " -->
+
+<body>
+<header>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #03060c">
+        <div class="container-fluid">
+            <a class="navbar-brand" id="home-clicks">
+                <img alt="PosLab Logo" height="48.1875" src="assets/img/logo.png" width="184.3125"/>
+            </a>
+            <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-click">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="order-click">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link" id="customer-click">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="item-click">Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="orderDetails-click">Order Details</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="hDate">2021-01-20</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active d-none d-sm-block d-sm-none d-md-block d-md-none d-lg-block">|</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger" href="index.html" id="logout-click" role="button">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- NavBar End -->
+</header>
+<main>
+    <section class="container d-flex flex-column justify-content-center align-items-stretch" id="home"
+             style="height: 46rem">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <a class="nav-link p-0 text-white" id="order-clicks">
+                    <div class="modal-dialog shadow-lg">
+                        <div class="modal-content justify-content-center align-items-center"
+                             style="height: 10rem; background-color: #1abc9c">
+                            <h3 class="modal-title fw-bold">ORDER</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <a class="nav-link p-0 text-white" id="item-clicks">
+                    <div class="modal-dialog shadow-lg">
+                        <div class="modal-content justify-content-center align-items-center"
+                             style="height: 10rem; background-color: #9b59b6">
+                            <h3 class="modal-title fw-bold">ITEM</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <a class="nav-link p-0 text-white" id="customer-clicks">
+                    <div class="modal-dialog shadow-lg">
+                        <div class="modal-content justify-content-center align-items-center"
+                             style="height: 10rem; background-color: #f1c40f">
+                            <h3 class="modal-title fw-bold">CUSTOMER</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <a class="nav-link p-0 text-white" id="orderDetails-clicks">
+                    <div class="modal-dialog shadow-lg">
+                        <div class="modal-content justify-content-center align-items-center"
+                             style="height: 10rem; background-color: #e67e22">
+                            <h3 class="modal-title fw-bold">ORDER DETAILS</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid" id="order">
+        <div class="row align-items-center">
+            <!-- invoice -->
+            <div class="col-12 col-lg-4">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-center bg-warning">
+                            <h4 class="modal-title fw-bold">Invoice Details</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="oId">Order ID:</label>
+                                    <input class="form-control" id="oId" placeholder="O001" type="text"/>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="iDate">Date:</label>
+                                    <input class="form-control" id="iDate" type="date"/>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="idCmb">Customer ID:</label>
+                                    <select class="form-select" id="idCmb">
+                                        <option disabled selected value="">Select Customer ID</option>
+                                        <!-- <option value="1">C002</option>
+                                             <option value="2">C002</option>
+                                            <option value="3">C003</option> -->
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="inCusName">Customer Name:</label>
+                                    <input class="form-control" id="inCusName" type="text"/>
+                                </div>
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="inCusSalary">Salary:</label>
+                                    <input class="form-control" id="inCusSalary" type="number"/>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="inCusAddress">Address:</label>
+                                    <input class="form-control" id="inCusAddress" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Item Select -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header justify-content-center bg-warning">
+                            <h4 class="modal-title fw-bold">Item Select</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="itemIdCmb">Item:</label>
+                                    <select class="form-select" id="itemIdCmb">
+                                        <option disabled selected value="">Select Item ID</option>
+                                        <!-- <option selected>I001</option>
+                                            <option value="1">I001</option>
+                                            <option value="2">I002</option>
+                                            <option value="3">I003</option> -->
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="itemNameO">Item Name:</label>
+                                    <input class="form-control" id="itemNameO" type="text"/>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="qtyOnHandO">Qty On Hand:</label>
+                                    <input class="form-control" id="qtyOnHandO" type="number"/>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="priceO">Price:</label>
+                                    <input class="form-control" id="priceO" type="text"/>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="oQty">Order Quantity:</label>
+                                    <input class="form-control" id="oQty" type="number"/>
+                                </div>
+                            </div>
+                            <div class="row mt-3 mb-1">
+                                <button class="btn btn-primary" id="btnAddToCart" type="button">
+                                    Add Item
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Total Select -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <p class="h2 d-inline">Total :</p>
+                                    <p class="h2 d-inline" id="lblFullTotal">0 LKR</p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <p class="h2 d-inline">SubTotal :</p>
+                                    <p class="h2 d-inline" id="lblSubTotal">0 LKR</p>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="cash">Cash:</label>
+                                    <input class="form-control" id="cash" placeholder="5000" type="number"/>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="discount">Discount:</label>
+                                    <input class="form-control" id="discount" placeholder="10" type="number"/>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col">
+                                    <label class="form-label fw-bold" for="balanceO">Balance:</label>
+                                    <input class="form-control" id="balanceO" type="text"/>
+                                </div>
+                            </div>
+                            <div class="row mt-3 mb-1">
+                                <button class="btn btn-success" id="btnPurchase" type="button">
+                                    Purchase
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="table-responsive" style="height: 40vh">
+                <table class="table table-striped">
+                    <thead class="" style="background-color: #f39c12">
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbodyOrder">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="item">
+        <!-- Add Item Model Start -->
+        <div aria-hidden="true" aria-labelledby="itemAddModalToggleLabel" class="modal fade" id="addItem" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="itemAddModalToggleLabel">
+                            <i class="bi bi-bag-plus m-2"></i>Add Item
+                        </h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addItemForm">
+                            <div class="mb-3">
+                                <label class="form-label" for="itemCode">Item Code</label>
+                                <input class="form-control" id="itemCode" name="itemCodeF" type="text"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="itemName">Item Name</label>
+                                <input class="form-control" id="itemName" name="itemNameF" type="text"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="itemQty">Item Qty</label>
+                                <input class="form-control" id="itemQty" name="itemQtyF" type="text"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="itemPrice">Item Price</label>
+                                <input class="form-control" id="itemPrice" name="itemPriceF" type="text"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary mt-2" data-bs-dismiss="modal" type="button">
+                            Cancel
+                        </button>
+                        <button class="btn btn-primary mt-2" id="btnAddItem" type="button">
+                            Add Item
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Item Model End -->
+
+        <!-- Update Item Model Start -->
+        <div aria-hidden="true" aria-labelledby="itemUpdateModalToggleLabel" class="modal fade" id="updateItem"
+             tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="itemUpdateModalToggleLabel">
+                            <i class="bi bi-bag-plus m-2"></i>Update Item
+                        </h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label" for="updateItemCode">Item Code</label>
+                                <input class="form-control" id="updateItemCode" type="text"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="updateItemName">Item Name</label>
+                                <input class="form-control" id="updateItemName" type="text"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="updateItemQty">Item Qty</label>
+                                <input class="form-control" id="updateItemQty" type="text"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="updateItemPrice">Item Price</label>
+                                <input class="form-control" id="updateItemPrice" type="text"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer" style="justify-content: space-between;flex-direction: row-reverse">
+                        <div>
+                            <button class="btn btn-secondary mt-2" data-bs-dismiss="modal" type="button">
+                                Cancel
+                            </button>
+                            <button class="btn btn-primary mt-2" id="btnUpdateItem" type="button">
+                                Update Item
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger item-delete mt-2" type="button">
+                                Delete Item
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Update Item Model End -->
+
+        <div class="rounded-3 p-3" style="background-color: #dde4f0; margin-top: 30px">
+            <h1 class="text-center mb-3">
+                <i class="bi bi-box-seam m-2"></i>ITEM
+            </h1>
+
+            <div class="row g-3 align-items-center pb-3 justify-content-between">
+                <div class="col-12 col-md-6 col-xl-5">
+                    <div class="input-group mb-3" style="height: 10px">
+                        <input aria-describedby="btn-item-search" aria-label="Recipient's username" class="form-control"
+                               id="txt-item-search"
+                               placeholder="Search Item" type="text"/>
+                        <button class="btn btn-success" id="btn-item-search" type="button">
+                            <i class="bi bi-search m-2"></i>Search
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+                    <button class="btn btn-primary mt-2" data-bs-target="#addItem" data-bs-toggle="modal"
+                            id="addItemOutBtn"
+                            type="button">
+                        <i class="bi bi-bag-plus m-2"></i>Add Item
+                    </button>
+                    <button class="btn btn-danger mt-2" id="clear-btn-item" type="button">
+                        <i class="bi bi-backspace m-2"></i>Clear
+                    </button>
+                </div>
+            </div>
+            <hr/>
+            <div class="row align-items-center pt-3">
+                <div class="col-12 mt-2">
+                    <div class="table-responsive" style="height: 55vh">
+                        <table class="table table-light table-striped">
+                            <thead style="position: sticky;top: 0">
+                            <tr>
+                                <th>Item Code</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th class="text-center" style="width: 15%">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="itemTblBody">
+                            <!-- <tr>
+                                    <th scope="row">I001</th>
+                                    <td>Mouse</td>
+                                    <td>2000</td>
+                                    <td>100</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-warning">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                        </button>
+                                        <button class="btn btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">I002</th>
+                                    <td>Keyboard</td>
+                                    <td>2000</td>
+                                    <td>100</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-warning">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                        </button>
+                                        <button class="btn btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">I003</th>
+                                    <td>GamePad</td>
+                                    <td>1000</td>
+                                    <td>100</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-warning">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                        </button>
+                                        <button class="btn btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col">
+                    <nav class="mt-2">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <span class="page-link">Previous</span>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li aria-current="page" class="page-item">
+                                <span class="page-link">2</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="cutomer">
+        <!-- Add Customer Model Start -->
+        <div aria-hidden="true" aria-labelledby="cusAddModalToggleLabel" class="modal fade" id="addCustomer"
+             tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="cusAddModalToggleLabel">
+                            <i class="bi bi-person-plus-fill m-2"></i>Add Customer
+                        </h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addCusForm">
+                            <div class="mb-3">
+                                <label class="form-label" for="cusIdAdd">Customer ID</label>
+                                <input class="form-control" id="cusIdAdd" name="cusID" type="text"/>
+                                <small id="error1">* Customer ID is a required field, Pattern C00-001</small>
+                                <!-- <small id="error1"></small> -->
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="cusNameAdd">Customer Name</label>
+                                <input class="form-control" id="cusNameAdd" name="cusName" type="text"/>
+                                <small id="error2">* Customer Name is required field, Min 5 & Max 10</small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="cusAddressAdd">Customer Address</label>
+                                <input class="form-control" id="cusAddressAdd" name="cusAddress" type="text"/>
+                                <small id="error3">* Customer Address is required field, Min 5</small>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="cusSalaryAdd">Customer Salary</label>
+                                <input class="form-control" id="cusSalaryAdd" name="cusSalary" type="text"/>
+                                <small id="error4">* Customer Address is required field, Ex:500.00</small>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary mt-2" data-bs-dismiss="modal" type="button">
+                            Cancel
+                        </button>
+                        <button class="btn btn-primary mt-2" id="btnAddCus" type="button">
+                            Add Customer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Customer Model End -->
+
+        <!-- Update Customer Model Start -->
+        <div aria-hidden="true" aria-labelledby="cusUpdateModalToggleLabel" class="modal fade" id="updateCustomer"
+             tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="cusUpdateModalToggleLabel">
+                            <i class="bi bi-person-plus-fill m-2"></i>Update Customer
+                        </h5>
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="updateCusForm">
+                            <div class="mb-3">
+                                <label class="form-label" for="cusIdUpdate">Customer ID</label>
+                                <input class="form-control" id="cusIdUpdate" name="cusIDUpdate" type="text"/>
+                                <small id="error01">* Customer ID is a required field, Pattern C00-001</small>
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="cusNameUpdate">Customer Name</label>
+                                <input class="form-control" id="cusNameUpdate" name="cusNameUpdate" type="text"/>
+                                <small id="error02">* Customer Name is required field, Min 5 & Max 10</small>
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="cusAddressUpdate">Customer Address</label>
+                                <input class="form-control" id="cusAddressUpdate" name="cusAddressUpdate" type="text"/>
+                                <small id="error03">* Customer Address is required field, Min 5</small>
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="cusSalaryUpdate">Customer Salary</label>
+                                <input class="form-control" id="cusSalaryUpdate" name="cusSalaryUpdate" type="text"/>
+                                <small id="error04">* Customer Address is required field, Ex:500.00</small>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer" style="justify-content: space-between;flex-direction: row-reverse">
+                        <div>
+                            <button class="btn btn-secondary mt-2" data-bs-dismiss="modal" type="button">
+                                Cancel
+                            </button>
+                            <button class="btn btn-primary mt-2" id="btnUpdateCus" type="button">
+                                Update Customer
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger cus-delete mt-2" type="button">
+                                Delete Item
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Update Customer Model End -->
+
+        <div class="rounded-3 p-3" style="background-color: #dde4f0; margin-top: 30px">
+            <h1 class="text-center mb-3">
+                <i class="bi bi-people-fill m-2"></i>Customer
+            </h1>
+
+            <div class="row g-3 align-items-center pb-3 justify-content-between">
+                <div class="col-12 col-md-6 col-xl-5">
+                    <div class="input-group mb-3" style="height: 10px">
+                        <input aria-describedby="button-addon2" aria-label="Recipient's username" class="form-control"
+                               id="txt-cus-search"
+                               placeholder="Search Customer" type="text"/>
+                        <button class="btn btn-success" id="button-cus-search" type="button">
+                            <i class="bi bi-search m-2"></i>Search
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+                    <button class="btn btn-primary mt-2" data-bs-target="#addCustomer" data-bs-toggle="modal"
+                            id="addCusModelPop"
+                            type="button">
+                        <i class="bi bi-person-plus-fill m-2"></i>Add Customer
+                    </button>
+                    <button class="btn btn-danger mt-2" id="clear-btn-cus" type="button">
+                        <i class="bi bi-backspace m-2"></i>Clear
+                    </button>
+                </div>
+            </div>
+            <hr/>
+            <div class="row align-items-center pt-3">
+                <div class="col-12 mt-2">
+                    <div class="table-responsive" style="height: 55vh">
+                        <table class="table table-light table-striped">
+                            <thead style="position: sticky;top: 0">
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Salary</th>
+                                <th class="text-center" style="width: 15%">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="cusTblBody">
+                            <!-- <tr>
+                                    <th scope="row">C001</th>
+                                    <td>Sri</td>
+                                    <td>Kandy</td>
+                                    <td>100000</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-warning">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                        </button>
+                                        <button class="btn btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">C002</th>
+                                    <td>Danapala</td>
+                                    <td>Gampola</td>
+                                    <td>50000</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-warning">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                        </button>
+                                        <button class="btn btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">C003</th>
+                                    <td>Somapala</td>
+                                    <td>Colombo</td>
+                                    <td>60000</td>
+                                    <td class="text-center">
+                                        <button class="btn btn-warning">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                        </button>
+                                        <button class="btn btn-danger">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col">
+                    <nav class="mt-2">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <span class="page-link">Previous</span>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li aria-current="page" class="page-item">
+                                <span class="page-link">2</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--    order detail    -->
+    <section class="container" id="orderDetailsSec">
+        <div class="rounded-3 p-3" style="background-color: #dde4f0; margin-top: 30px">
+            <h1 class="text-center mb-3">
+                <i class="bi bi-box-seam m-2"></i>ORDER DETAILS
+            </h1>
+
+            <div class="row g-3 align-items-center pb-3 justify-content-between">
+                <div class="col-12 col-md-6 col-xl-5">
+                    <div class="input-group mb-3" style="height: 10px">
+                        <input aria-describedby="btn-order-search" aria-label="Recipient's username"
+                               class="form-control" id="txt-order-search"
+                               placeholder="Search Order" type="text"/>
+                        <button class="btn btn-success" id="btn-order-search" type="button">
+                            <i class="bi bi-search m-2"></i>Search
+                        </button>
+                        <button class="btn btn-danger" id="clear-btn-order" type="button">
+                            <i class="bi bi-backspace m-2"></i>Clear
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 col-xl-3"
+                     style="display: flex; align-items: center; justify-content: flex-start;">
+                    <div style="display: flex;
+                        flex-direction: column;">
+                        <div>
+                            <h6 class="d-inline">Order ID : </h6>
+                            <h6 class="d-inline" id="lblOrderId"></h6>
+                        </div>
+                        <div>
+                            <h6 class="d-inline">Customer ID : </h6>
+                            <h6 class="d-inline" id="lblCusId"></h6>
+                        </div>
+                        <div>
+                            <h6 class="d-inline">Date : </h6>
+                            <h6 class="d-inline" id="lblDate"></h6>
+                        </div>
+                        <div>
+                            <h6 class="d-inline">Sub Total : </h6>
+                            <h6 class="d-inline" id="lblSTotal"></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+            <div class="row align-items-center pt-3">
+                <div class="col-12 mt-2">
+                    <div class="table-responsive" style="height: 55vh">
+                        <table class="table table-light table-striped">
+                            <thead>
+                            <tr>
+                                <th>Item Code</th>
+                                <th>Item Name</th>
+                                <th>Unit Price</th>
+                                <th>Qty</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+                            <tbody id="orderDetailsTblBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- <div class="col">
+                    <nav class="mt-2">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <span class="page-link">Previous</span>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item" aria-current="page">
+                                <span class="page-link">2</span>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+</main>
+<script crossorigin="anonymous"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script src="db\DB.js"></script>
+<!--
+<script src="model/CustomerDTO.js"></script>
+<script src="model/ItemDTO.js"></script>
+<script src="model/OrderDTO.js"></script>
+<script src="model/OrderDetailDTO.js"></script>
+-->
+<script src="controller/CustomerController.js"></script>
+<script src="controller/ItemController.js"></script>
+<script src="controller/OrderController.js"></script>
+<script src="controller/OrderDetailsController.js"></script>
+<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
