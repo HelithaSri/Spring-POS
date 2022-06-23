@@ -38,4 +38,10 @@ class CustomerControllerTest {
         CustomerDTO customerDTO = new CustomerDTO("C002", "Helitha", "Kandy", 5000.20);
         customerService.saveCustomer(customerDTO);
     }
+
+    @Test
+    void updateCustomer(){
+        CustomerDTO customerDTO = new CustomerDTO("C003", "Helitha Sri", "Kandy, Nawalapitiya", 900);
+        customerService.updateCustomer(customerDTO);
+    }
 }

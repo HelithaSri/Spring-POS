@@ -30,10 +30,15 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customerDTO){
-        System.out.println(customerDTO.toString());
         customerService.saveCustomer(customerDTO);
         return new ResponseUtil(200,"Customer added Successfully", null);
     }
 
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO){
+        customerService.updateCustomer(customerDTO);
+        System.out.println(customerDTO.toString());
+        return new ResponseUtil(200,"Customer Update Successfully", null);
+    }
 
 }

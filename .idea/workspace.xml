@@ -10,14 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/config/WebAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/config/WebAppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/CustomerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/CustomerRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/lk/ijse/spring/controller/CustomerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/lk/ijse/spring/controller/CustomerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/CustomerController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,7 @@
       <recent name="lk.ijse.spring.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.76">
+  <component name="RunManager" selected="JUnit.CustomerControllerTest.updateCustomer">
     <configuration name="CustomerControllerTest.addCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <extension name="coverage">
@@ -108,6 +104,22 @@
       <option name="PACKAGE_NAME" value="lk.ijse.spring.controller" />
       <option name="MAIN_CLASS_NAME" value="lk.ijse.spring.controller.CustomerControllerTest" />
       <option name="METHOD_NAME" value="getAllCustomers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerControllerTest.updateCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lk.ijse.spring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lk.ijse.spring.controller" />
+      <option name="MAIN_CLASS_NAME" value="lk.ijse.spring.controller.CustomerControllerTest" />
+      <option name="METHOD_NAME" value="updateCustomer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -202,6 +214,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CustomerControllerTest.updateCustomer" />
         <item itemvalue="JUnit.CustomerControllerTest.addCustomer" />
         <item itemvalue="JUnit.CustomerControllerTest.getAllCustomers" />
       </list>
@@ -217,7 +230,7 @@
       <updated>1655883015373</updated>
       <workItem from="1655883019263" duration="6207000" />
       <workItem from="1655908234501" duration="1686000" />
-      <workItem from="1655959066419" duration="8914000" />
+      <workItem from="1655959066419" duration="10523000" />
     </task>
     <servers />
   </component>
