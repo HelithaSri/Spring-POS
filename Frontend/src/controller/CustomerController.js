@@ -158,14 +158,14 @@ function bindCustomerRow() {
 function deleteCustomer() {
     let id = $("#cusIdUpdate").val();
     $.ajax({
-        url: `http://localhost:8080/pos/customer?customerID=${id}`,
+        url:baseUrl+`?id=${id}`,
         method: "DELETE",
         success: function (resp) {
-            if (resp.status == 200) {
+            if (resp.code == 200) {
                 loadAllCustomers();
                 clearFields()   //Clear Input Fields
                 $("#updateCustomer").modal('hide');
-            } else if (resp.status == 400) {
+            } else if (resp.code == 400) {
                 alert(resp.data);
             }
         }
