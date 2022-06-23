@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/test/java/lk/ijse/spring/controller/CustomerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/test/java/lk/ijse/spring/controller/CustomerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/CustomerController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +74,7 @@
       <recent name="lk.ijse.spring.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CustomerControllerTest.updateCustomer">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.76">
     <configuration name="CustomerControllerTest.addCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <extension name="coverage">
@@ -230,7 +228,7 @@
       <updated>1655883015373</updated>
       <workItem from="1655883019263" duration="6207000" />
       <workItem from="1655908234501" duration="1686000" />
-      <workItem from="1655959066419" duration="10523000" />
+      <workItem from="1655959066419" duration="11232000" />
     </task>
     <servers />
   </component>

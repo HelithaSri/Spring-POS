@@ -37,8 +37,13 @@ public class CustomerController {
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO){
         customerService.updateCustomer(customerDTO);
-        System.out.println(customerDTO.toString());
         return new ResponseUtil(200,"Customer Update Successfully", null);
+    }
+
+    @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteCustomer(@RequestParam String id){
+        customerService.deleteCustomer(id);
+        return new ResponseUtil(200,"Customer Delete Successfully", null);
     }
 
 }
