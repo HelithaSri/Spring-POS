@@ -29,6 +29,8 @@ $("#clear-btn-cus").click(function () {
     clearFields()   //Clear Input Fields
 });
 
+const baseUrl = `http://localhost:8080/pos/api/customer`;
+
 //Search Btn Click
 $("#button-cus-search").click(function () {
     if (!$("#txt-cus-search").val()) {
@@ -67,13 +69,13 @@ $("#btnUpdateCus").click(function () {
     }
 
     $.ajax({
-        url: "http://localhost:8080/pos/customer", method: "PUT", // contentType: "application/json",
+        url: baseUrl, method: "PUT",  contentType: "application/json",
         data: JSON.stringify(cusOb), success: function (resp) {
-            if (resp.status == 200) {
+            if (resp.code == 200) {
                 loadAllCustomers();
                 clearFields()   //Clear Input Fields
                 $("#updateCustomer").modal('hide');
-            } else if (resp.status == 400) {
+            } else if (resp.code == 400) {
                 alert(resp.data);
             }
         }
@@ -101,7 +103,7 @@ function generateId() {
 // Customer Add Function - Start
 function addCustomer() {
     $.ajax({
-        url: "http://localhost:8080/pos/api/customer",
+        url: baseUrl,
         method: "POST",
         data: $("#addCusForm").serialize(),
         success: function (res) {
@@ -127,7 +129,7 @@ function addCustomer() {
 function loadAllCustomers() {
     $("#cusTblBody").empty(); //Duplicate Old rows remove
     $.ajax({
-        url: "http://localhost:8080/pos/api/customer", method: "GET", success: function (resp) {
+        url: baseUrl, method: "GET", success: function (resp) {
             for (const customer of resp.data) {
                 let row = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.salary}</td><td style="text-align: center">${btns}</td></tr>`;
                 $("#cusTblBody").append(row);
