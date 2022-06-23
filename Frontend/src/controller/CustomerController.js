@@ -101,11 +101,11 @@ function generateId() {
 // Customer Add Function - Start
 function addCustomer() {
     $.ajax({
-        url: "http://localhost:8080/pos/customer",
+        url: "http://localhost:8080/pos/api/customer",
         method: "POST",
         data: $("#addCusForm").serialize(),
         success: function (res) {
-            if (res.status == 200) {
+            if (res.code == 200) {
                 loadAllCustomers();
                 clearFields()   //Clear Input Fields
                 loadAllCustomerIds();
@@ -127,7 +127,7 @@ function addCustomer() {
 function loadAllCustomers() {
     $("#cusTblBody").empty(); //Duplicate Old rows remove
     $.ajax({
-        url: "http://localhost:8080/pos/customer?option=GETALL", method: "GET", success: function (resp) {
+        url: "http://localhost:8080/pos/api/customer", method: "GET", success: function (resp) {
             for (const customer of resp.data) {
                 let row = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.salary}</td><td style="text-align: center">${btns}</td></tr>`;
                 $("#cusTblBody").append(row);

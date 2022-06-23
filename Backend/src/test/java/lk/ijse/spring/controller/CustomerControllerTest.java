@@ -1,0 +1,41 @@
+package lk.ijse.spring.controller;
+
+import lk.ijse.spring.config.WebAppConfig;
+import lk.ijse.spring.dto.CustomerDTO;
+import lk.ijse.spring.service.CustomerService;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.transaction.annotation.Transactional;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * @author Helitha Sri
+ * @created 6/23/2022 - 12:07 PM
+ * @project Spring POS
+ */
+
+@WebAppConfiguration
+@ContextConfiguration(classes = {WebAppConfig.class})
+@ExtendWith(SpringExtension.class)
+@Transactional // dont commit anything to database // just test is it working properly or not
+class CustomerControllerTest {
+
+    @Autowired
+    CustomerService customerService;
+
+    @Test
+    void getAllCustomers() {
+        customerService.getAllCustomers();
+    }
+
+    @Test
+    void addCustomer(){
+        CustomerDTO customerDTO = new CustomerDTO("C002", "Helitha", "Kandy", 5000.20);
+        customerService.saveCustomer(customerDTO);
+    }
+}
