@@ -12,6 +12,11 @@
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/dto/CustomerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/CustomerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/CustomerRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/impl/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/CustomerController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,8 +142,8 @@
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="2e3f8cd4-084c-49b9-9df1-199bf610051c" />
       </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <log_file alias="Tomcat Localhost Log" path="%IDEA_RUN:CATALINA_BASE%/logs/localhost.*" />
+      <log_file alias="Tomcat Catalina Log" path="%IDEA_RUN:CATALINA_BASE%/logs/catalina.*" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
@@ -232,7 +237,8 @@
       <workItem from="1655908234501" duration="1686000" />
       <workItem from="1655959066419" duration="11420000" />
       <workItem from="1656077393787" duration="26000" />
-      <workItem from="1656077437093" duration="1708000" />
+      <workItem from="1656077437093" duration="1857000" />
+      <workItem from="1656094141759" duration="7782000" />
     </task>
     <servers />
   </component>

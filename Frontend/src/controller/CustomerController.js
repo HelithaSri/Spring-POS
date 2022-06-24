@@ -93,11 +93,11 @@ $(".cus-delete").click(function () {
 //Generate Customer ID
 function generateId() {
     $.ajax({
-        url: "http://localhost:8080/pos/customer?option=GENERATED_ID", method: "GET", success: function (resp) {
-            if (resp.status == 200) {
-                $("#cusIdAdd").val(resp.data.id);
+        url: baseUrl+"/generate", method: "GET", success: function (resp) {
+            if (resp.code == 200) {
+                $("#cusIdAdd").val(resp.data);
             } else {
-                alert(resp.data);
+                alert(resp.code);
             }
         }
     });

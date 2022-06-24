@@ -58,15 +58,39 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<CustomerDTO> searchCustomer(String id, String name) {
-        if (repo.existsCustomerByIdOrName(id,name)){
-            return mapper.map(repo.searchCustomerByIdOrName(id,name),new TypeToken<List<CustomerDTO>>(){}.getType());
-        }else {
-            throw new RuntimeException("No Customer For " + id+", "+name + " ..!");
+        if (repo.existsCustomerByIdOrName(id, name)) {
+            return mapper.map(repo.searchCustomerByIdOrName(id, name), new TypeToken<List<CustomerDTO>>() {
+            }.getType());
+        } else {
+            throw new RuntimeException("No Customer For " + id + ", " + name + " ..!");
         }
     }
 
     @Override
     public List<CustomerDTO> getAllCustomers() {
-        return mapper.map(repo.findAll(), new TypeToken<List<CustomerDTO>>(){}.getType());
+        return mapper.map(repo.findAll(), new TypeToken<List<CustomerDTO>>() {
+        }.getType());
+    }
+
+    @Override
+    public String generateCustomerId() {
+        long count = repo.count();
+        String id = "C00-000";
+
+        if (count != 0) {
+            String generateCustomerId = repo.generateCustomerId();
+            int tempId = Integer.parseInt(generateCustomerId.split("-")[1]);
+            tempId += 1;
+            if (tempId < 10) {
+                id = "C00-00" + tempId;
+            } else if (tempId < 100) {
+                id = "C00-0" + tempId;
+            } else if (tempId < 1000) {
+                id = "C00-" + tempId;
+            }
+        } else {
+            id = "C00-000";
+        }
+        return id;
     }
 }

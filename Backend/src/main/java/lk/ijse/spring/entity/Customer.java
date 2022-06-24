@@ -25,4 +25,8 @@ public class Customer {
     private String name;
     private String address;
     private double salary;
+
+    public Customer(String id) {
+        this.id = id;
+    }
 }
