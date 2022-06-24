@@ -38,12 +38,12 @@ $("#button-cus-search").click(function () {
         return;
     }
 
+    let search = $("#txt-cus-search").val();
+
     // let btns = "<button class='btn btn-warning' data-bs-target='#updateCustomer' data-bs-toggle='modal'><i class='bi bi-arrow-clockwise'></i></button> <button class='btn btn-danger cus-delete'><i class='bi bi-trash'></i></button>";
     $.ajax({
-        url: "http://localhost:8080/pos/customer?option=SEARCH", method: "GET", data: {
-            id: $("#txt-cus-search").val()
-        }, success: function (resp) {
-            if (resp.status == 200) {
+        url: baseUrl + `/search?search=${search}`, method: "GET", success: function (resp) {
+            if (resp.code == 200) {
                 $("#cusTblBody").empty();
                 for (const customer of resp.data) {
                     let row = `<tr><td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.salary}</td><td style="text-align: center">${btns}</td></tr>`;
@@ -69,8 +69,11 @@ $("#btnUpdateCus").click(function () {
     }
 
     $.ajax({
-        url: baseUrl, method: "PUT",  contentType: "application/json",
-        data: JSON.stringify(cusOb), success: function (resp) {
+        url: baseUrl,
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(cusOb),
+        success: function (resp) {
             if (resp.code == 200) {
                 loadAllCustomers();
                 clearFields()   //Clear Input Fields
@@ -103,10 +106,7 @@ function generateId() {
 // Customer Add Function - Start
 function addCustomer() {
     $.ajax({
-        url: baseUrl,
-        method: "POST",
-        data: $("#addCusForm").serialize(),
-        success: function (res) {
+        url: baseUrl, method: "POST", data: $("#addCusForm").serialize(), success: function (res) {
             if (res.code == 200) {
                 loadAllCustomers();
                 clearFields()   //Clear Input Fields
@@ -116,8 +116,7 @@ function addCustomer() {
                 alert(res.data);
             }
 
-        },
-        error: function (ob, textStatus, error) {
+        }, error: function (ob, textStatus, error) {
             console.log(ob);
             console.log(textStatus);
             console.log(error);
@@ -142,7 +141,7 @@ function loadAllCustomers() {
 // Bind Events Customer Row Function - Start
 function bindCustomerRow() {
     $("#cusTblBody>tr").click(function () {
-        let custID=$(this).children(":eq(0)").text();
+        let custID = $(this).children(":eq(0)").text();
         let custName = $(this).children(":eq(1)").text();
         let custAddress = $(this).children(":eq(2)").text();
         let custSalary = $(this).children(":eq(3)").text();
@@ -158,9 +157,7 @@ function bindCustomerRow() {
 function deleteCustomer() {
     let id = $("#cusIdUpdate").val();
     $.ajax({
-        url:baseUrl+`?id=${id}`,
-        method: "DELETE",
-        success: function (resp) {
+        url: baseUrl + `?id=${id}`, method: "DELETE", success: function (resp) {
             if (resp.code == 200) {
                 loadAllCustomers();
                 clearFields()   //Clear Input Fields

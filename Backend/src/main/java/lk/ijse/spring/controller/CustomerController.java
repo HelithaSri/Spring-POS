@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author Helitha Sri
  * @created 6/22/2022 - 1:54 PM
@@ -46,4 +48,8 @@ public class CustomerController {
         return new ResponseUtil(200,"Customer Delete Successfully", null);
     }
 
+    @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchCustomer(@RequestParam String search){
+        return new ResponseUtil(200,"OK",customerService.searchCustomer(search,search));
+    }
 }

@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/CustomerController.js" afterDir="false" />
     </list>
@@ -61,6 +62,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -228,7 +230,9 @@
       <updated>1655883015373</updated>
       <workItem from="1655883019263" duration="6207000" />
       <workItem from="1655908234501" duration="1686000" />
-      <workItem from="1655959066419" duration="11232000" />
+      <workItem from="1655959066419" duration="11420000" />
+      <workItem from="1656077393787" duration="26000" />
+      <workItem from="1656077437093" duration="1708000" />
     </task>
     <servers />
   </component>
