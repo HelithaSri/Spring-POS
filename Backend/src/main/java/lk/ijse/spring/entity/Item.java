@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 /**
  * @author Helitha Sri
- * @created 6/22/2022 - 1:54 PM
+ * @created 6/25/2022 - 2:11 AM
  * @project Spring POS
  */
 
@@ -19,10 +19,10 @@ import javax.persistence.Id;
 @Data
 @ToString
 @Entity
-public class Customer {
+public class Item {
     @Id
-    private String id;
-    private String name;
-    private String address;
-    private double salary;
+    private String code;
+    private String description;
+    private int qtyOnHand;
+    private double unitPrice;
 }

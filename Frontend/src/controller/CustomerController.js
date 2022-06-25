@@ -93,7 +93,7 @@ $(".cus-delete").click(function () {
 //Generate Customer ID
 function generateId() {
     $.ajax({
-        url: baseUrl+"/generate", method: "GET", success: function (resp) {
+        url: baseUrl + "/generate", method: "GET", success: function (resp) {
             if (resp.code == 200) {
                 $("#cusIdAdd").val(resp.data);
             } else {

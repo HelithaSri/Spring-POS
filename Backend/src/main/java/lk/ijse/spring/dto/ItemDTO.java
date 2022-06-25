@@ -7,7 +7,7 @@ import lombok.ToString;
 
 /**
  * @author Helitha Sri
- * @created 6/22/2022 - 1:54 PM
+ * @created 6/25/2022 - 2:11 AM
  * @project Spring POS
  */
 
@@ -15,9 +15,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 @ToString
-public class CustomerDTO {
-    private String id;
-    private String name;
-    private String address;
-    private double salary;
+public class ItemDTO {
+    private String code;
+    private String description;
+    private int qtyOnHand;
+    private double unitPrice;
 }
