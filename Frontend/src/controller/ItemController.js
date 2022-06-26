@@ -12,7 +12,6 @@ let iBtns = "<button class='btn btn-warning' data-bs-target='#updateItem' data-b
 //Item btn Click On Home Page
 $("#item-clicks").click(function () {
     loadAllItems(); //Load All items
-    clearSearch();  //Clear Search and Refresh table
     clearFieldsItem();
     disableEditFields();    //Prevent Editing Item Code
 });
@@ -27,12 +26,15 @@ $("#btnAddItem").click(function () {
     addItem();
 });
 
+const itemBaseUrl = `http://localhost:8080/pos/api/item`;
+
 //Search Item btn Click
 $("#btn-item-search").click(function () {
     if (!$("#txt-item-search").val()) {
         loadAllItems();
-        return;
+        return false;
     }
+    
     $.ajax({
         url: "http://localhost:8080/pos/item?option=SEARCH", method: "GET",
         data: {
@@ -47,7 +49,7 @@ $("#btn-item-search").click(function () {
                 }
             } else {
                 alert(resp.data);
-                loadAllItems(); //load all customers
+                loadAllItems(); //load all Items
                 clearFieldsItem()   //Clear Input Fields
             }
         }
@@ -89,11 +91,11 @@ $("#clear-btn-item").click(function () {
 // Item Add Function - Start
 function addItem() {
     $.ajax({
-        url: "http://localhost:8080/pos/item",
+        url: itemBaseUrl,
         method: "POST",
         data: $("#addItemForm").serialize(),
         success: function (res) {
-            if (res.status == 200) {
+            if (res.code == 200) {
                 loadAllItems(); //load all Items
                 clearFieldsItem();
                 loadAllItemCodes();
@@ -113,11 +115,15 @@ function addItem() {
 // Load All Items Function - Start
 function loadAllItems() {
     $("#itemTblBody").empty(); //Duplicate Old rows remove
+    console.log("hi");
     $.ajax({
-        url: "http://localhost:8080/pos/item?option=GETALL", method: "GET", success: function (resp) {
+        url: itemBaseUrl, method: "GET", success: function (resp) {
+            console.log(resp.data);
             for (const item of resp.data) {
-                let row = `<tr><td>${item.code}</td><td>${item.name}</td><td>${item.unitPrice}</td><td>${item.qtyOnHand}</td><td style="text-align: center">${iBtns}</td></tr>`;
+                let row = `<tr><td>${item.code}</td><td>${item.description}</td><td>${item.unitPrice}</td><td>${item.qtyOnHand}</td><td style="text-align: center">${iBtns}</td></tr>`;
+                console.log("hey1");
                 $("#itemTblBody").append(row);
+                console.log("hey");
                 bindItemRow();
             }
         }
@@ -140,10 +146,10 @@ function bindItemRow() {
 }
 
 //clear search function - start
-function clearSearch() {
+/*function clearSearch() {
     loadAllItems(); //load all Items
     $("#txt-item-search").val("");
-}
+}*/
 
 // Delete Item function - start
 function deleteItem() {
