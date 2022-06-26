@@ -9,7 +9,7 @@ $("#customer-clicks").click(function () {
     validationStaff() // Staff required for validation
     loadAllCustomers(); //load all customers
     clearFields()   //Clear Input Fields
-    clearSearch();
+    //clearSearch();
     disableEdit();  //Prevent Editing Customer ID
 })
 
