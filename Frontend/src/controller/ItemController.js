@@ -34,13 +34,11 @@ $("#btn-item-search").click(function () {
         loadAllItems();
         return false;
     }
-    
+    let code = $("#txt-item-search").val();
     $.ajax({
-        url: "http://localhost:8080/pos/item?option=SEARCH", method: "GET",
-        data: {
-            code: $("#txt-item-search").val()
-        }, success: function (resp) {
-            if (resp.status == 200) {
+        url: itemBaseUrl+`/search?search=${code}`, method: "GET"
+        , success: function (resp) {
+            if (resp.code == 200) {
                 $("#itemTblBody").empty();
                 for (const item of resp.data) {
                     let row = `<tr><td>${item.code}</td><td>${item.name}</td><td>${item.unitPrice}</td><td>${item.qtyOnHand}</td><td style="text-align: center">${iBtns}</td></tr>`;
@@ -65,18 +63,18 @@ $(".item-delete").click(function () {
 $("#btnUpdateItem").click(function () {
     var itemObj = {
         code: $("#updateItemCode").val(),
-        name: $("#updateItemName").val(),
+        description: $("#updateItemName").val(),
         qtyOnHand: parseInt($("#updateItemQty").val()),
         unitPrice: parseInt($("#updateItemPrice").val())
     }
 
     $.ajax({
-        url: "http://localhost:8080/pos/item", method: "PUT", data: JSON.stringify(itemObj), success: function (resp) {
-            if (resp.status == 200) {
+        url: itemBaseUrl, method: "PUT",contentType: "application/json", data: JSON.stringify(itemObj), success: function (resp) {
+            if (resp.code == 200) {
                 loadAllItems();
                 clearFieldsItem() //Clear Input Fields
                 $("#updateItem").modal('hide');
-            } else if (resp.status == 400) {
+            } else if (resp.code == 400) {
                 alert(resp.data);
             }
         }
@@ -155,14 +153,14 @@ function bindItemRow() {
 function deleteItem() {
     let id = $("#updateItemCode").val();
     $.ajax({
-        url: `http://localhost:8080/pos/item?itemCode=${id}`,
+        url: itemBaseUrl+`?code=${id}`,
         method: "DELETE",
         success: function (resp) {
-            if (resp.status == 200) {
+            if (resp.code == 200) {
                 loadAllItems();
                 clearFieldsItem()   //Clear Input Fields
                 $("#updateItem").modal('hide');
-            } else if (resp.status == 400) {
+            } else{
                 alert(resp.data);
             }
         }
@@ -172,9 +170,9 @@ function deleteItem() {
 // Generate Item ID's function - start
 function generateItemId() {
     $.ajax({
-        url: "http://localhost:8080/pos/item?option=GENERATED_ID", method: "GET", success: function (resp) {
-            if (resp.status == 200) {
-                $("#itemCode").val(resp.data.code);
+        url: itemBaseUrl+"/generate", method: "GET", success: function (resp) {
+            if (resp.code == 200) {
+                $("#itemCode").val(resp.data);
             } else {
                 alert(resp.data);
             }
