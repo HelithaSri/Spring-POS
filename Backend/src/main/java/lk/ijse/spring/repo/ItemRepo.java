@@ -18,6 +18,6 @@ public interface ItemRepo extends JpaRepository<Item, String> {
 
     List<Item> searchItemByCodeOrDescription(String code, String name);
 
-    @Query(value = "SELECT code FROM item ORDER BY id DESC LIMIT 1", nativeQuery = true)
+    @Query(value = "SELECT code FROM item ORDER BY code DESC LIMIT 1", nativeQuery = true)
     String generateItemId();
 }
