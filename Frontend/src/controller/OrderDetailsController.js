@@ -5,7 +5,7 @@ $("#btn-order-search").click(function () {
 
 });
 
-$("#clear-btn-order").click(function () {
+$("#clear-btn-order,#orderDetails-click").click(function () {
     $("#orderDetailsTblBody").children().remove();
     $("#lblCusId").text("");
     $("#lblDate").text("");

@@ -10,7 +10,7 @@
 let iBtns = "<button class='btn btn-warning' data-bs-target='#updateItem' data-bs-toggle='modal'><i class='bi bi-pencil-square'></i></button>";
 
 //Item btn Click On Home Page
-$("#item-clicks").click(function () {
+$("#item-clicks,#item-click").click(function () {
     loadAllItems(); //Load All items
     clearFieldsItem();
     disableEditFields();    //Prevent Editing Item Code

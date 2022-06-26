@@ -4,7 +4,7 @@ $("#discount").val(0);
 $("#cash").val(0);
 
 
-$("#order-clicks").click(function (){
+$("#order-clicks,#order-click").click(function (){
     generateOrderId();  //Generate Order Id
     disableEdit();  //Prevent Editing Input Fields
     setDate();  //Set Time

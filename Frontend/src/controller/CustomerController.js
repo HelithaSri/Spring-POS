@@ -5,7 +5,7 @@ let btns = "<button class='btn btn-warning' data-bs-target='#updateCustomer' dat
 let clickedRowCId;
 
 //Customer Btn Click On Home Page
-$("#customer-clicks").click(function () {
+$("#customer-clicks,#customer-click").click(function () {
     validationStaff() // Staff required for validation
     loadAllCustomers(); //load all customers
     clearFields()   //Clear Input Fields
