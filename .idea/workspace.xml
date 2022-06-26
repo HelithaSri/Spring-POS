@@ -11,7 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/ItemRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/ItemRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/impl/ItemServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -124,6 +125,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ItemControllerTest.getAllItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lk.ijse.spring.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lk.ijse.spring.controller" />
+      <option name="MAIN_CLASS_NAME" value="lk.ijse.spring.controller.ItemControllerTest" />
+      <option name="METHOD_NAME" value="getAllItems" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.76" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.76" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -213,6 +230,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ItemControllerTest.getAllItems" />
         <item itemvalue="JUnit.CustomerControllerTest.updateCustomer" />
         <item itemvalue="JUnit.CustomerControllerTest.addCustomer" />
         <item itemvalue="JUnit.CustomerControllerTest.getAllCustomers" />
@@ -234,7 +252,7 @@
       <workItem from="1656077437093" duration="1857000" />
       <workItem from="1656094141759" duration="8438000" />
       <workItem from="1656163513424" duration="3249000" />
-      <workItem from="1656224170495" duration="971000" />
+      <workItem from="1656224170495" duration="3439000" />
     </task>
     <servers />
   </component>

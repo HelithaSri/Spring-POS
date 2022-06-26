@@ -57,8 +57,8 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<ItemDTO> searchItem(String code, String name) {
-        if (repo.existsItemByCodeOrName(code,name)){
-            return mapper.map(repo.searchItemByCodeOrName(code,name), new TypeToken<List<ItemDTO>>(){}.getType());
+        if (repo.existsItemByCodeOrDescription(code,name)){
+            return mapper.map(repo.searchItemByCodeOrDescription(code,name), new TypeToken<List<ItemDTO>>(){}.getType());
         }else{
             throw new RuntimeException("No Item For " + code + ", " + name + " ..!");
         }
