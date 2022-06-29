@@ -11,8 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/ItemRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/ItemRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/controller/ItemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/ItemController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +22,8 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -253,6 +251,11 @@
       <workItem from="1656094141759" duration="8438000" />
       <workItem from="1656163513424" duration="3249000" />
       <workItem from="1656224170495" duration="15270000" />
+      <workItem from="1656264453682" duration="252000" />
+      <workItem from="1656270353575" duration="66000" />
+      <workItem from="1656311538837" duration="1010000" />
+      <workItem from="1656504949962" duration="1976000" />
+      <workItem from="1656522580249" duration="3535000" />
     </task>
     <servers />
   </component>
