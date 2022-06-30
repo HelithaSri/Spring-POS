@@ -23,4 +23,8 @@ public interface ItemService {
     List<ItemDTO> getAllItems();
 
     String generateItemId();
+
+    List<String> getAllItemIds();
+
+    ItemDTO loadSelectedItemDetails(String code);
 }

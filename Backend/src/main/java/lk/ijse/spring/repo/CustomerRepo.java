@@ -2,6 +2,7 @@ package lk.ijse.spring.repo;
 
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.entity.Customer;
+import lk.ijse.spring.entity.Item;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -20,4 +21,10 @@ public interface CustomerRepo extends JpaRepository<Customer, String> {
 
     @Query(value = "SELECT id FROM customer ORDER BY id DESC LIMIT 1", nativeQuery = true)
     String generateCustomerId();
+
+    @Query(value = "SELECT id FROM customer", nativeQuery = true)
+    List<String> loadCustomerIds();
+
+    @Query(value = "SELECT * FROM customer WHERE id=?1", nativeQuery = true)
+    Customer loadSelectCustomerDetails(String id);
 }

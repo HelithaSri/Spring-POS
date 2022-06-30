@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -89,5 +90,23 @@ public class ItemServiceImpl implements ItemService {
             id = "I00-000";
         }
         return id;
+    }
+
+    @Override
+    public List<String> getAllItemIds() {
+        if (repo.count()==0){
+            List<String> arrayList = new ArrayList<>();
+            arrayList.add("No Items Available");
+            return arrayList;
+        }else {
+            List<String> allByCode = repo.loadItemIds();
+            System.out.println(allByCode);
+            return allByCode;
+        }
+    }
+
+    @Override
+    public ItemDTO loadSelectedItemDetails(String code) {
+        return mapper.map(repo.loadSelectItemDetails(code), ItemDTO.class);
     }
 }

@@ -20,4 +20,10 @@ public interface ItemRepo extends JpaRepository<Item, String> {
 
     @Query(value = "SELECT code FROM item ORDER BY code DESC LIMIT 1", nativeQuery = true)
     String generateItemId();
+
+    @Query(value = "SELECT code FROM item", nativeQuery = true)
+    List<String> loadItemIds();
+
+    @Query(value = "SELECT * FROM item WHERE code=?1", nativeQuery = true)
+    Item loadSelectItemDetails(String code);
 }
