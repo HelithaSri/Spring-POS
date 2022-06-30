@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @project Spring POS
  */
 
-public interface orderDetailsRepo extends JpaRepository<OrderDetails, String> {
+public interface OrderDetailsRepo extends JpaRepository<OrderDetails, String> {
 }
