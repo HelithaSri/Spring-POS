@@ -46,6 +46,20 @@ $("#cash").keyup(function (event) {
 
 });
 
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+function getActualDate() {
+    var d = new Date();
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth()+1);
+    var year = addZero(d.getFullYear());
+    return  year + "-" + month + "-" + day;
+}
 
 //------------------------------------------------------
 
@@ -287,21 +301,6 @@ function discountCal() {
     console.log(typeof discounted_price);
     $("#lblSubTotal").text(discounted_price + " LKR");
 
-}
-
-function addZero(i) {
-    if (i < 10) {
-        i = "0" + i;
-    }
-    return i;
-}
-
-function getActualDate() {
-    var d = new Date();
-    var day = addZero(d.getDate());
-    var month = addZero(d.getMonth()+1);
-    var year = addZero(d.getFullYear());
-    return  year + "-" + month + "-" + day;
 }
 
 function purchaseOrder() {

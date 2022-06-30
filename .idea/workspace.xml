@@ -9,12 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/PurchaseOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/PurchaseOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/controller/OrderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/OrderController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -291,7 +286,7 @@
       <workItem from="1656531190342" duration="893000" />
       <workItem from="1656565645645" duration="6179000" />
       <workItem from="1656583270494" duration="9523000" />
-      <workItem from="1656601406378" duration="7522000" />
+      <workItem from="1656601406378" duration="7874000" />
     </task>
     <servers />
   </component>
