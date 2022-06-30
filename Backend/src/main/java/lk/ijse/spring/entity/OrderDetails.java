@@ -5,10 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 /**
  * @author Helitha Sri
@@ -21,9 +18,11 @@ import javax.persistence.ManyToOne;
 @Data
 @ToString
 @Entity
+@IdClass(OrderItem_PK.class)
 public class OrderDetails {
     @Id
     private String oid;
+    @Id
     private String itemCode;
     private int qty;
     private double unitPrice;
