@@ -42,13 +42,14 @@ public class PurchaseOrderController {
         return new ResponseUtil(200, "Ok", itemService.loadSelectedItemDetails(code));
     }
 
-    @GetMapping(path = "/loadCustomerCode", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/loadCustomerIds", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllCustomerIds() {
         return new ResponseUtil(200, "Ok", customerService.getAllCustomerIds());
     }
 
     @GetMapping(path = "/loadCustomerDetails", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil loadSelectedCustomerDetails(@RequestParam String id) {
+        System.out.println("id is : "+id);
         return new ResponseUtil(200, "Ok", customerService.loadSelectedCustomerDetails(id));
     }
 

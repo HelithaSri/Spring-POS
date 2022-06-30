@@ -7,7 +7,7 @@ $("#cash").val(0);
 $("#order-clicks,#order-click").click(function (){
     generateOrderId();  //Generate Order Id
     disableEdit();  //Prevent Editing Input Fields
-    setDate();  //Set Time
+    // setDate();  //Set Time
     loadAllCustomerIds();
     loadAllItemCodes();
     clearPurchaseFields();
@@ -49,6 +49,8 @@ $("#cash").keyup(function (event) {
 
 //------------------------------------------------------
 
+const orderBaseUrl = `http://localhost:8080/pos/api/purchaseOrder`;
+
 /* Load Customer ID's to Combo Box - Function */
 function loadAllCustomerIds() {
     $("#idCmb").empty();
@@ -57,10 +59,10 @@ function loadAllCustomerIds() {
     $("#idCmb").append(cusHint);
 
     $.ajax({
-        url: "http://localhost:8080/pos/order?option=LOAD_CUS_ID", method: "GET", success: function (resp) {
-            if (resp.status == 200) {
+        url: orderBaseUrl+"/loadCustomerIds", method: "GET", success: function (resp) {
+            if (resp.code == 200) {
                 for (const customer of resp.data) {
-                    let option = `<option value="${customer.id}">${customer.id}</option>`;
+                    let option = `<option value="${customer}">${customer}</option>`;
                     $("#idCmb").append(option);
                 }
             } else {
@@ -79,10 +81,10 @@ function loadAllItemCodes() {
     $("#itemIdCmb").append(itemHint);
 
     $.ajax({
-        url: "http://localhost:8080/pos/order?option=LOAD_ITEM_ID", method: "GET", success: function (resp) {
-            if (resp.status == 200) {
+        url: orderBaseUrl+"/loadItemCode", method: "GET", success: function (resp) {
+            if (resp.code == 200) {
                 for (const item of resp.data) {
-                    let option = `<option value="${item.code}">${item.code}</option>`;
+                    let option = `<option value="${item}">${item}</option>`;
                     $("#itemIdCmb").append(option);
                 }
             } else {
@@ -93,18 +95,14 @@ function loadAllItemCodes() {
 }
 
 /* Load Customer Data To input Fields */
-function selectedCustomer(CustomerId) {
+function selectedCustomer(customerId) {
 
     $.ajax({
-        url: `http://localhost:8080/pos/order?option=SELECTED_CUS&cusID=${CustomerId}`,
-        method: "GET",
-        success: function (resp) {
-            if (resp.status == 200) {
-                for (const customer of resp.data) {
-                    $("#inCusName").val(customer.name);
-                    $("#inCusSalary").val(customer.salary);
-                    $("#inCusAddress").val(customer.address);
-                }
+        url: orderBaseUrl + `/loadCustomerDetails?id=${customerId}`, method: "GET", success: function (resp) {
+            if (resp.code == 200) {
+                $("#inCusName").val(resp.data.name);
+                $("#inCusSalary").val(resp.data.salary);
+                $("#inCusAddress").val(resp.data.address);
             } else {
                 alert(resp.data);
             }
@@ -116,15 +114,14 @@ function selectedCustomer(CustomerId) {
 function selectedItem(ItemId) {
 
     $.ajax({
-        url: `http://localhost:8080/pos/order?option=SELECTED_ITEM&itemID=${ItemId}`,
-        method: "GET",
-        success: function (resp) {
-            if (resp.status == 200) {
-                for (const item of resp.data) {
-                    $("#itemNameO").val(item.description);
-                    $("#qtyOnHandO").val(item.qtyOnHand);
-                    $("#priceO").val(item.unitPrice);
-                }
+        url: orderBaseUrl+`/loadItemDetails?code=${ItemId}`,
+        method: "GET", success: function (resp) {
+            if (resp.code == 200) {
+
+                $("#itemNameO").val(resp.data.description);
+                $("#qtyOnHandO").val(resp.data.qtyOnHand);
+                $("#priceO").val(resp.data.unitPrice);
+
             } else {
                 alert(resp.data);
             }
@@ -142,9 +139,9 @@ function disableEdit() {
 function generateOrderId() {
 
     $.ajax({
-        url: "http://localhost:8080/pos/order?option=GENERATED_OID", method: 'GET', success: function (resp) {
-            if (resp.status == 200) {
-                $("#oId").val(resp.data.oId);
+        url: orderBaseUrl + "/generateId", method: 'GET', success: function (resp) {
+            if (resp.code == 200) {
+                $("#oId").val(resp.data);
             } else {
                 alert(resp.data);
             }
@@ -153,13 +150,13 @@ function generateOrderId() {
     });
 }
 
-/* Set Current Date to datepicker */
+/*/!* Set Current Date to datepicker *!/
 function setDate() {
     let d = new Date();
     let dd = d.toISOString().split("T")[0].split("-");
     $("#iDate").val(dd[0] + "-" + dd[1] + "-" + dd[2]);
     $("#hDate").text(dd[0] + "-" + dd[1] + "-" + dd[2]);
-}
+}*/
 
 /* Add Item To Cart */
 var fullTotal = 0;
@@ -193,12 +190,12 @@ function addItemToCart() {
     }
     iQtyOnHand = iQtyOnHand - iOrderQTY;
 
-    //updateing qty
+    /*//updateing qty
     for (let i = 0; i < itemDB.length; i++) {
         if (id == itemDB[i].getItemCode()) {
             itemDB[i].setItemQty(iQtyOnHand);
         }
-    }
+    }*/
 
     let newQty = 0;
     let newTotal = 0;
@@ -292,18 +289,36 @@ function discountCal() {
 
 }
 
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+function getActualDate() {
+    var d = new Date();
+    var day = addZero(d.getDate());
+    var month = addZero(d.getMonth()+1);
+    var year = addZero(d.getFullYear());
+    return  year + "-" + month + "-" + day;
+}
+
 function purchaseOrder() {
 
     var obj = {
-        order: {
-            orderId:$("#oId").val(),
-            customer: selectedCustomerId,
-            orderDate: $("#iDate").val(),
-            discount: parseInt($("#discount").val()),
-            total: $("#lblFullTotal").text().split(" ")[0],
-            subTotal: $("#lblSubTotal").text().split(" ")[0]
+        oid: $("#oId").val(),
+        date: getActualDate(),
+        discount: parseInt($("#discount").val()),
+        total: $("#lblFullTotal").text().split(" ")[0],
+        subTotal: $("#lblSubTotal").text().split(" ")[0],
+        customerId: {
+            id: selectedCustomerId,
+            name: $("#inCusName").val(),
+            address: $("#inCusAddress").val(),
+            salary: $("#inCusSalary").val(),
         },
-        orderDetail:[]
+        orderDetails: []
     }
 
     for (let i = 0; i < $('#tbodyOrder tr').length; i++) {
@@ -314,26 +329,20 @@ function purchaseOrder() {
         tblItemQty = $('#tbodyOrder').children().eq(i).children().eq(3).text();
         tblItemTotal = $('#tbodyOrder').children().eq(i).children().eq(4).text();
 
+        // itemName:tblItemName,
         var details = {
-            itemCode:tblItemId,
-            itemName:tblItemName,
-            itemPrice:tblItemPrice,
-            itemQty:tblItemQty,
-            itemTotal:tblItemTotal
+            oid: $("#oId").val(), itemCode: tblItemId, qty: tblItemQty, unitPrice: tblItemPrice, total: tblItemTotal
         }
-        obj.orderDetail.push(details);
+        obj.orderDetails.push(details);
 
     }
     console.log(JSON.stringify(obj));
     $.ajax({
-        url: "http://localhost:8080/pos/order",
-        method: "POST",
-        data: JSON.stringify(obj),
-        success: function (resp) {
-            if (resp.status==200){
+        url: orderBaseUrl, method: "POST",contentType: "application/json", data: JSON.stringify(obj), success: function (resp) {
+            if (resp.code == 200) {
                 generateOrderId();
                 clearPurchaseFields();
-            }else {
+            } else {
                 alert(resp.data);
             }
         }

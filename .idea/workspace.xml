@@ -10,12 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Backend_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Backend_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/Backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/Backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/config/WebAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/config/WebAppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/PurchaseOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/controller/PurchaseOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/controller/OrderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/OrderController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -293,6 +291,7 @@
       <workItem from="1656531190342" duration="893000" />
       <workItem from="1656565645645" duration="6179000" />
       <workItem from="1656583270494" duration="9523000" />
+      <workItem from="1656601406378" duration="7522000" />
     </task>
     <servers />
   </component>
