@@ -60,21 +60,6 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
     }
 
     @Override
-    public void deleteOrder(String oid) {
-
-    }
-
-    @Override
-    public void updateOrder(OrdersDTO dto) {
-
-    }
-
-    @Override
-    public OrdersDTO searchOrder(String oid) {
-        return null;
-    }
-
-    @Override
     public String generateOrderId() {
         long count = ordersRepo.count();
         String id = "O00-000";

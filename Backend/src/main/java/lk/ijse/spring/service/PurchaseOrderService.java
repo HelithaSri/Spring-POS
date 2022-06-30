@@ -12,14 +12,5 @@ public interface PurchaseOrderService {
 
     void purchaseOrder(OrdersDTO dto);
 
-    void deleteOrder(String oid);
-
-    void updateOrder(OrdersDTO dto);
-
-    OrdersDTO searchOrder(String oid);
-
     String generateOrderId();
-
-//    List<OrdersDTO> getAllOrders();
-
 }
