@@ -18,6 +18,8 @@ public interface PurchaseOrderService {
 
     OrdersDTO searchOrder(String oid);
 
+    String generateOrderId();
+
 //    List<OrdersDTO> getAllOrders();
 
 }

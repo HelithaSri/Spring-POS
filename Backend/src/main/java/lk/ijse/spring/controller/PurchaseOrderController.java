@@ -50,4 +50,9 @@ public class PurchaseOrderController {
     public ResponseUtil loadSelectedCustomerDetails(@RequestParam String id) {
         return new ResponseUtil(200, "Ok", customerService.loadSelectedCustomerDetails(id));
     }
+
+    @GetMapping(path = "/generateId", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil generateId() {
+        return new ResponseUtil(200, "OK", orderService.generateOrderId());
+    }
 }

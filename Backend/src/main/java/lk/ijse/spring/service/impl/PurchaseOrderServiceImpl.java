@@ -73,4 +73,26 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
     public OrdersDTO searchOrder(String oid) {
         return null;
     }
+
+    @Override
+    public String generateOrderId() {
+        long count = ordersRepo.count();
+        String id = "O00-000";
+
+        if (count != 0) {
+            String generateOrderId = ordersRepo.generateOrderId();
+            int tempId = Integer.parseInt(generateOrderId.split("-")[1]);
+            tempId += 1;
+            if (tempId < 10) {
+                id = "O00-00" + tempId;
+            } else if (tempId < 100) {
+                id = "O00-0" + tempId;
+            } else if (tempId < 1000) {
+                id = "O00-" + tempId;
+            }
+        } else {
+            id = "O00-000";
+        }
+        return id;
+    }
 }
