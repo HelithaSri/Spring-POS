@@ -22,8 +22,8 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -71,10 +71,14 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="lk.ijse.spring.service.impl" />
       <recent name="lk.ijse.spring.controller" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lk.ijse.spring.entity" />
+    </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.76">
+  <component name="RunManager" selected="JUnit.PurchaseOrderServiceImplTest.purchaseOrder">
     <configuration name="CustomerControllerTest.addCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <extension name="coverage">
@@ -134,6 +138,22 @@
       <option name="PACKAGE_NAME" value="lk.ijse.spring.controller" />
       <option name="MAIN_CLASS_NAME" value="lk.ijse.spring.controller.ItemControllerTest" />
       <option name="METHOD_NAME" value="getAllItems" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PurchaseOrderServiceImplTest.purchaseOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lk.ijse.spring.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lk.ijse.spring.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="lk.ijse.spring.service.impl.PurchaseOrderServiceImplTest" />
+      <option name="METHOD_NAME" value="purchaseOrder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -228,6 +248,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PurchaseOrderServiceImplTest.purchaseOrder" />
         <item itemvalue="JUnit.ItemControllerTest.getAllItems" />
         <item itemvalue="JUnit.CustomerControllerTest.updateCustomer" />
         <item itemvalue="JUnit.CustomerControllerTest.addCustomer" />
@@ -255,7 +276,9 @@
       <workItem from="1656270353575" duration="66000" />
       <workItem from="1656311538837" duration="1010000" />
       <workItem from="1656504949962" duration="1976000" />
-      <workItem from="1656522580249" duration="3535000" />
+      <workItem from="1656522580249" duration="5395000" />
+      <workItem from="1656531190342" duration="893000" />
+      <workItem from="1656565645645" duration="1540000" />
     </task>
     <servers />
   </component>
