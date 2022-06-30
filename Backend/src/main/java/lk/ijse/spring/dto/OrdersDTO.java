@@ -23,7 +23,7 @@ public class OrdersDTO {
     private String oid;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate date;
-    private int discount;
+    private double discount;
     private double total;
     private double subTotal;
     private CustomerDTO customerId;
