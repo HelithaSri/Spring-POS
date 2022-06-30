@@ -1,6 +1,7 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.ItemDTO;
+import lk.ijse.spring.dto.OrdersDTO;
 import lk.ijse.spring.service.CustomerService;
 import lk.ijse.spring.service.ItemService;
 import lk.ijse.spring.service.PurchaseOrderService;
@@ -55,4 +56,11 @@ public class PurchaseOrderController {
     public ResponseUtil generateId() {
         return new ResponseUtil(200, "OK", orderService.generateOrderId());
     }
+
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil purchaseOrder(@RequestBody OrdersDTO ordersDTO){
+        orderService.purchaseOrder(ordersDTO);
+        return new ResponseUtil(200,"Ok",null);
+    }
+
 }
