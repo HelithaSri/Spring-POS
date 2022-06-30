@@ -29,10 +29,10 @@ public class OrderDetails {
     private double total;
 
     @ManyToOne
-    @JoinColumn(name = "oid",referencedColumnName = "oid",insertable = false,updatable = false)
+    @JoinColumn(name = "oid", referencedColumnName = "oid", insertable = false, updatable = false)
     private Orders orders;
 
     @ManyToOne
-    @JoinColumn(name = "itemCode",referencedColumnName = "code",insertable = false,updatable = false)
+    @JoinColumn(name = "itemCode", referencedColumnName = "code", insertable = false, updatable = false)
     private Item items;
 }

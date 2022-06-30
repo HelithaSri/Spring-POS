@@ -23,37 +23,37 @@ public class ItemController {
     ItemService itemService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllItems(){
-        return new ResponseUtil(200,"OK",itemService.getAllItems());
+    public ResponseUtil getAllItems() {
+        return new ResponseUtil(200, "OK", itemService.getAllItems());
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil addItem(@ModelAttribute ItemDTO itemDTO){
+    public ResponseUtil addItem(@ModelAttribute ItemDTO itemDTO) {
         itemService.saveItem(itemDTO);
-        return new ResponseUtil(200,"Item added Successfully",null);
+        return new ResponseUtil(200, "Item added Successfully", null);
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateItem(@RequestBody ItemDTO itemDTO){
+    public ResponseUtil updateItem(@RequestBody ItemDTO itemDTO) {
         itemService.updateItem(itemDTO);
-        return new ResponseUtil(200,"Item Update Successfully",null);
+        return new ResponseUtil(200, "Item Update Successfully", null);
     }
 
     @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil deleteItem(@RequestParam String code){
+    public ResponseUtil deleteItem(@RequestParam String code) {
         itemService.deleteItem(code);
-        return new ResponseUtil(200,"Delete Item Successfully",null);
+        return new ResponseUtil(200, "Delete Item Successfully", null);
     }
 
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil searchItem(@RequestParam String search){
-        return new ResponseUtil(200,"OK",itemService.searchItem(search,search));
+    public ResponseUtil searchItem(@RequestParam String search) {
+        return new ResponseUtil(200, "OK", itemService.searchItem(search, search));
     }
 
     @GetMapping(path = "/generate", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil generateId(){
-        return new ResponseUtil(200,"OK",itemService.generateItemId());
+    public ResponseUtil generateId() {
+        return new ResponseUtil(200, "OK", itemService.generateItemId());
     }
 
 }

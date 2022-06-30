@@ -1,9 +1,6 @@
 package lk.ijse.spring.service;
 
-import lk.ijse.spring.dto.ItemDTO;
 import lk.ijse.spring.dto.OrdersDTO;
-
-import java.util.List;
 
 /**
  * @author Helitha Sri

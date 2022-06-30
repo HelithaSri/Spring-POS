@@ -1,7 +1,6 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.CustomerDTO;
-import lk.ijse.spring.dto.ItemDTO;
 import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.repo.CustomerRepo;
 import lk.ijse.spring.service.CustomerService;
@@ -98,11 +97,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<String> getAllCustomerIds() {
-        if (repo.count()==0){
+        if (repo.count() == 0) {
             List<String> arrayList = new ArrayList<>();
             arrayList.add("No Customer Available");
             return arrayList;
-        }else {
+        } else {
             List<String> allByCode = repo.loadCustomerIds();
             System.out.println(allByCode);
             return allByCode;

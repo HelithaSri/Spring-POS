@@ -23,36 +23,36 @@ public class CustomerController {
     CustomerService customerService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllCustomers(){
-        return new ResponseUtil(200,"OK",customerService.getAllCustomers());
+    public ResponseUtil getAllCustomers() {
+        return new ResponseUtil(200, "OK", customerService.getAllCustomers());
     }
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customerDTO){
+    public ResponseUtil addCustomer(@ModelAttribute CustomerDTO customerDTO) {
         customerService.saveCustomer(customerDTO);
-        return new ResponseUtil(200,"Customer added Successfully", null);
+        return new ResponseUtil(200, "Customer added Successfully", null);
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO){
+    public ResponseUtil updateCustomer(@RequestBody CustomerDTO customerDTO) {
         customerService.updateCustomer(customerDTO);
-        return new ResponseUtil(200,"Customer Update Successfully", null);
+        return new ResponseUtil(200, "Customer Update Successfully", null);
     }
 
     @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil deleteCustomer(@RequestParam String id){
+    public ResponseUtil deleteCustomer(@RequestParam String id) {
         customerService.deleteCustomer(id);
-        return new ResponseUtil(200,"Customer Delete Successfully", null);
+        return new ResponseUtil(200, "Customer Delete Successfully", null);
     }
 
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil searchCustomer(@RequestParam String search){
-        return new ResponseUtil(200,"OK",customerService.searchCustomer(search,search));
+    public ResponseUtil searchCustomer(@RequestParam String search) {
+        return new ResponseUtil(200, "OK", customerService.searchCustomer(search, search));
     }
 
     @GetMapping(path = "/generate", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil generateId(){
-        return new ResponseUtil(200,"OK",customerService.generateCustomerId());
+    public ResponseUtil generateId() {
+        return new ResponseUtil(200, "OK", customerService.generateCustomerId());
     }
 }

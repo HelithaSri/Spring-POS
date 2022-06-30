@@ -33,41 +33,43 @@ public class ItemServiceImpl implements ItemService {
     public void saveItem(ItemDTO itemDTO) {
         if (!repo.existsById(itemDTO.getCode())) {
             repo.save(mapper.map(itemDTO, Item.class));
-        }else {
+        } else {
             throw new RuntimeException("Item Already Exist");
         }
     }
 
     @Override
     public void deleteItem(String itemCode) {
-        if (repo.existsById(itemCode)){
+        if (repo.existsById(itemCode)) {
             repo.deleteById(itemCode);
-        }else {
+        } else {
             throw new RuntimeException("Please check the Item Code... No Such Item..!");
         }
     }
 
     @Override
     public void updateItem(ItemDTO itemDTO) {
-        if (repo.existsById(itemDTO.getCode())){
-            repo.save(mapper.map(itemDTO,Item.class));
-        }else {
+        if (repo.existsById(itemDTO.getCode())) {
+            repo.save(mapper.map(itemDTO, Item.class));
+        } else {
             throw new RuntimeException("Please check the Item Code... No Such Item to Update..!");
         }
     }
 
     @Override
     public List<ItemDTO> searchItem(String code, String name) {
-        if (repo.existsItemByCodeOrDescription(code,name)){
-            return mapper.map(repo.searchItemByCodeOrDescription(code,name), new TypeToken<List<ItemDTO>>(){}.getType());
-        }else{
+        if (repo.existsItemByCodeOrDescription(code, name)) {
+            return mapper.map(repo.searchItemByCodeOrDescription(code, name), new TypeToken<List<ItemDTO>>() {
+            }.getType());
+        } else {
             throw new RuntimeException("No Item For " + code + ", " + name + " ..!");
         }
     }
 
     @Override
     public List<ItemDTO> getAllItems() {
-        return mapper.map(repo.findAll(),new TypeToken<List<ItemDTO>>(){}.getType());
+        return mapper.map(repo.findAll(), new TypeToken<List<ItemDTO>>() {
+        }.getType());
     }
 
     @Override
@@ -94,11 +96,11 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public List<String> getAllItemIds() {
-        if (repo.count()==0){
+        if (repo.count() == 0) {
             List<String> arrayList = new ArrayList<>();
             arrayList.add("No Items Available");
             return arrayList;
-        }else {
+        } else {
             List<String> allByCode = repo.loadItemIds();
             System.out.println(allByCode);
             return allByCode;

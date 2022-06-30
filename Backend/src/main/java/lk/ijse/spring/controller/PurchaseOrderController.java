@@ -30,24 +30,24 @@ public class PurchaseOrderController {
     CustomerService customerService;
 
     @GetMapping(path = "/loadItemCode", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllItemIds(){
-        return new ResponseUtil(200,"Ok",itemService.getAllItemIds());
+    public ResponseUtil getAllItemIds() {
+        return new ResponseUtil(200, "Ok", itemService.getAllItemIds());
     }
 
     @GetMapping(path = "/loadItemDetails", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil loadSelectedItemDetails(@RequestParam String code){
+    public ResponseUtil loadSelectedItemDetails(@RequestParam String code) {
         ItemDTO itemDTO = itemService.loadSelectedItemDetails(code);
         System.out.println(itemDTO.toString());
-        return new ResponseUtil(200,"Ok",itemService.loadSelectedItemDetails(code));
+        return new ResponseUtil(200, "Ok", itemService.loadSelectedItemDetails(code));
     }
 
     @GetMapping(path = "/loadCustomerCode", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil getAllCustomerIds(){
-        return new ResponseUtil(200,"Ok",customerService.getAllCustomerIds());
+    public ResponseUtil getAllCustomerIds() {
+        return new ResponseUtil(200, "Ok", customerService.getAllCustomerIds());
     }
 
     @GetMapping(path = "/loadCustomerDetails", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil loadSelectedCustomerDetails(@RequestParam String id){
-        return new ResponseUtil(200,"Ok",customerService.loadSelectedCustomerDetails(id));
+    public ResponseUtil loadSelectedCustomerDetails(@RequestParam String id) {
+        return new ResponseUtil(200, "Ok", customerService.loadSelectedCustomerDetails(id));
     }
 }

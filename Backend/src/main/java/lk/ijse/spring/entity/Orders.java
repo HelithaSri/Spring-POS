@@ -27,10 +27,10 @@ public class Orders {
     private double discount;
     private double total;
     private double subTotal;
-    @ManyToOne(cascade = {CascadeType.REFRESH,CascadeType.DETACH})
-    @JoinColumn(name = "customerID",referencedColumnName = "id",nullable = false)
+    @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH})
+    @JoinColumn(name = "customerID", referencedColumnName = "id", nullable = false)
     private Customer customerId;
 
-    @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL)
     private List<OrderDetails> orderDetails;
 }
