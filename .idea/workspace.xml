@@ -11,10 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/entity/OrderItem_PK.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/entity/OrderItem_PK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/OrderDetailsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/OrderDetailsRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/OrdersRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/OrdersRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/impl/PurchaseOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/impl/PurchaseOrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/controller/OrderDetailsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/OrderDetailsController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +292,7 @@
       <workItem from="1656601406378" duration="15139000" />
       <workItem from="1656620796411" duration="2347000" />
       <workItem from="1656660058230" duration="1116000" />
-      <workItem from="1656670529967" duration="4635000" />
+      <workItem from="1656670529967" duration="6091000" />
     </task>
     <servers />
   </component>

@@ -15,23 +15,24 @@ $("#clear-btn-order,#orderDetails-click").click(function () {
 });
 
 function searchOrderDetails(result) {
-    let oid = $("#txt-order-search").val();
+    // let oid = $("#txt-order-search").val();
     $.ajax({
-        url:`http://localhost:8080/pos/api/orderDetails?oid=${oid}`,
+        url:`http://localhost:8080/pos/api/orderDetails?oid=${result}`,
         method:"GET",
         success:function (resp) {
             console.log(resp.data);
             if (resp.code == 200) {
                 $("#orderDetailsTblBody").empty();
-                for (const fetch of resp.data) {
+
+                $("#lblOrderId").text(resp.data.oid);
+                $("#lblCusId").text(resp.data.customerId.name);
+                $("#lblDate").text(resp.data.date);
+                $("#lblSTotal").text(resp.data.subTotal);
+
+                for (const fetch of resp.data.orderDetails) {
                     let row = `<tr><td>${fetch.itemCode}</td><td>${fetch.itemName}</td><td>${fetch.unitPrice}</td><td>${fetch.qty}</td><td>${fetch.total}</td></tr>`;
                     $("#orderDetailsTblBody").append(row);
                     bindCustomerRow();
-
-                    $("#lblOrderId").text(fetch.oID);
-                    $("#lblCusId").text(fetch.cusID);
-                    $("#lblDate").text(fetch.date);
-                    $("#lblSTotal").text(fetch.subTotal);
                 }
             } else {
                 alert(resp.data)
