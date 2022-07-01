@@ -49,7 +49,7 @@ public class PurchaseOrderController {
 
     @GetMapping(path = "/loadCustomerDetails", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil loadSelectedCustomerDetails(@RequestParam String id) {
-        System.out.println("id is : "+id);
+        System.out.println("id is : " + id);
         return new ResponseUtil(200, "Ok", customerService.loadSelectedCustomerDetails(id));
     }
 
@@ -59,9 +59,9 @@ public class PurchaseOrderController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil purchaseOrder(@RequestBody OrdersDTO ordersDTO){
+    public ResponseUtil purchaseOrder(@RequestBody OrdersDTO ordersDTO) {
         orderService.purchaseOrder(ordersDTO);
-        return new ResponseUtil(200,"Ok",null);
+        return new ResponseUtil(200, "Ok", null);
     }
 
 }

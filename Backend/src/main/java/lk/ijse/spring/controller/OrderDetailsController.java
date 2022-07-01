@@ -1,14 +1,11 @@
 package lk.ijse.spring.controller;
 
 
-import lk.ijse.spring.dto.OrdersDTO;
 import lk.ijse.spring.service.OrderDetailsService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashMap;
 
 /**
  * @author Helitha Sri
