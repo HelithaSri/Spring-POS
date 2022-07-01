@@ -9,7 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="" />
+    <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/entity/OrderItem_PK.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/entity/OrderItem_PK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/OrderDetailsRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/OrderDetailsRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/OrdersRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/repo/OrdersRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/impl/PurchaseOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/lk/ijse/spring/service/impl/PurchaseOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/controller/OrderDetailsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/OrderDetailsController.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,22 +92,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.76">
-    <configuration name="CustomerControllerTest.addCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="lk.ijse.spring.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="lk.ijse.spring.controller" />
-      <option name="MAIN_CLASS_NAME" value="lk.ijse.spring.controller.CustomerControllerTest" />
-      <option name="METHOD_NAME" value="addCustomer" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CustomerControllerTest.updateCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Backend" />
       <extension name="coverage">
@@ -144,6 +135,22 @@
       <option name="PACKAGE_NAME" value="lk.ijse.spring.service.impl" />
       <option name="MAIN_CLASS_NAME" value="lk.ijse.spring.service.impl.ItemServiceImplTest" />
       <option name="METHOD_NAME" value="getAllItemIds" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderDetailsServiceImplTest.getOrders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lk.ijse.spring.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lk.ijse.spring.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="lk.ijse.spring.service.impl.OrderDetailsServiceImplTest" />
+      <option name="METHOD_NAME" value="getOrders" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -254,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderDetailsServiceImplTest.getOrders" />
         <item itemvalue="JUnit.ItemServiceImplTest.getAllItemIds" />
         <item itemvalue="JUnit.PurchaseOrderServiceImplTest.purchaseOrder" />
         <item itemvalue="JUnit.ItemControllerTest.getAllItems" />
         <item itemvalue="JUnit.CustomerControllerTest.updateCustomer" />
-        <item itemvalue="JUnit.CustomerControllerTest.addCustomer" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +293,10 @@
       <workItem from="1656531190342" duration="893000" />
       <workItem from="1656565645645" duration="6179000" />
       <workItem from="1656583270494" duration="9523000" />
-      <workItem from="1656601406378" duration="7874000" />
+      <workItem from="1656601406378" duration="15139000" />
+      <workItem from="1656620796411" duration="2347000" />
+      <workItem from="1656660058230" duration="1116000" />
+      <workItem from="1656670529967" duration="4635000" />
     </task>
     <servers />
   </component>

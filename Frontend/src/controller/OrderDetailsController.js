@@ -17,10 +17,11 @@ $("#clear-btn-order,#orderDetails-click").click(function () {
 function searchOrderDetails(result) {
     let oid = $("#txt-order-search").val();
     $.ajax({
-        url:`http://localhost:8080/pos/oDetails?orderID=${oid}`,
+        url:`http://localhost:8080/pos/api/orderDetails?oid=${oid}`,
         method:"GET",
         success:function (resp) {
-            if (resp.status == 200) {
+            console.log(resp.data);
+            if (resp.code == 200) {
                 $("#orderDetailsTblBody").empty();
                 for (const fetch of resp.data) {
                     let row = `<tr><td>${fetch.itemCode}</td><td>${fetch.itemName}</td><td>${fetch.unitPrice}</td><td>${fetch.qty}</td><td>${fetch.total}</td></tr>`;

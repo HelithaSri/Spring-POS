@@ -28,13 +28,7 @@ public class PurchaseOrderServiceImpl implements PurchaseOrderService {
     private OrdersRepo ordersRepo;
 
     @Autowired
-    private OrderDetailsRepo detailsRepo;
-
-    @Autowired
     private ItemRepo itemRepo;
-
-    @Autowired
-    private CustomerRepo customerRepo;
 
     @Autowired
     private ModelMapper mapper;

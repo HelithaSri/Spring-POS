@@ -10,9 +10,14 @@ import org.springframework.data.jpa.repository.Query;
  * @project Spring POS
  */
 
-public interface OrdersRepo extends JpaRepository<Orders,String> {
+public interface OrdersRepo extends JpaRepository<Orders, String> {
 
     @Query(value = "SELECT oid FROM orders ORDER BY oid DESC LIMIT 1", nativeQuery = true)
     String generateOrderId();
+
+//    List<Orders> findOrdersByOid(String oid);
+
+    @Query(value = "select o from Orders o where o.oid=?1")
+    Orders getAllOrders(String oid);
 
 }
