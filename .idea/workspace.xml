@@ -12,6 +12,7 @@
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/controller/OrderDetailsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/OrderDetailsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +293,7 @@
       <workItem from="1656601406378" duration="15139000" />
       <workItem from="1656620796411" duration="2347000" />
       <workItem from="1656660058230" duration="1116000" />
-      <workItem from="1656670529967" duration="6091000" />
+      <workItem from="1656670529967" duration="6593000" />
     </task>
     <servers />
   </component>

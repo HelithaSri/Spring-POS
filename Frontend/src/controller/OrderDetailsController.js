@@ -30,7 +30,7 @@ function searchOrderDetails(result) {
                 $("#lblSTotal").text(resp.data.subTotal);
 
                 for (const fetch of resp.data.orderDetails) {
-                    let row = `<tr><td>${fetch.itemCode}</td><td>${fetch.itemName}</td><td>${fetch.unitPrice}</td><td>${fetch.qty}</td><td>${fetch.total}</td></tr>`;
+                    let row = `<tr><td>${fetch.itemCode}</td><td>${fetch.unitPrice}</td><td>${fetch.qty}</td><td>${fetch.total}</td></tr>`;
                     $("#orderDetailsTblBody").append(row);
                     bindCustomerRow();
                 }
