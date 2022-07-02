@@ -11,8 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c172f8cb-5b54-4676-821e-712662a91fa2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/controller/OrderDetailsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/controller/OrderDetailsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +22,8 @@
       <list>
         <option value="package-info" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,10 +65,10 @@
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Backend" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -258,9 +256,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PurchaseOrderServiceImplTest.purchaseOrder" />
         <item itemvalue="JUnit.OrderDetailsServiceImplTest.getOrders" />
         <item itemvalue="JUnit.ItemServiceImplTest.getAllItemIds" />
-        <item itemvalue="JUnit.PurchaseOrderServiceImplTest.purchaseOrder" />
         <item itemvalue="JUnit.ItemControllerTest.getAllItems" />
         <item itemvalue="JUnit.CustomerControllerTest.updateCustomer" />
       </list>
@@ -293,7 +291,12 @@
       <workItem from="1656601406378" duration="15139000" />
       <workItem from="1656620796411" duration="2347000" />
       <workItem from="1656660058230" duration="1116000" />
-      <workItem from="1656670529967" duration="6593000" />
+      <workItem from="1656670529967" duration="7092000" />
+      <workItem from="1656685946637" duration="685000" />
+      <workItem from="1656701461265" duration="747000" />
+      <workItem from="1656790360419" duration="204000" />
+      <workItem from="1656790580461" duration="276000" />
+      <workItem from="1656790872620" duration="1208000" />
     </task>
     <servers />
   </component>
